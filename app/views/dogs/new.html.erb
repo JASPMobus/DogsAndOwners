@@ -1,0 +1,12 @@
+<h1>Register Your Dog!</h1>
+<%= form_for @dog do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.fields_for(:owner, Owner.new) do |ff| %>
+        <%= ff.label :owner_name %>
+        <%= ff.text_field :name %>
+    <% end %>
+    <br>
+    <%= f.submit %>
+<% end %>
